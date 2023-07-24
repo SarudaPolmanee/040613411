@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        input:invalid{
+            color: green;
+        }
+        input,input:valid{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Form pattern attibutes testing</h1>
+    <hr>
+    <form action="form-echo.php" method="get">
+        <label>Slide 33 Example:</label>
+        <input type="text" name="example" placeholder="aaaa">
+
+        <h2>1.เป็นสระในภาษาอังกฤษเท่านั้นและมีได้ 3 ตัว</h2>
+        <input type="text" name="no1" placeholder="3 english only"
+        pattern="[AEIOUaeiou]{3}"
+        title="3 digit english only">
+
+        <h2>2.ขึ้นต้นด้วยตัวพิมพ์ใหญ่ ที่เหลือเป็นอักษรพิมพ์เล็กตั้งแต่ 1 ตัวขึ้นไป</h2>
+        <input type="text" name="no2" placeholder="Xx..."
+        pattern="^([A-Z]{1})[a-z]+"
+        title="First letter must be capital">
+
+        <h2>3.ขึ้นต้นคำด้วย ord หรือ order ลงท้ายด้วยตัวเลข 5 ตัว</h2>
+        <input type="text" name="no3" placeholder="ord/order+nnnnn"
+        pattern="^(ord|order)\d{5}"
+        title="start with ord ot order following with 5 digit of number">
+
+        <h2>4.เป็นคำว่า from หรือ blog หรือ clog เท่านั้น</h2>
+        <input type="text" name="no4" placeholder="frog/blog/clog"
+        pattern="(frog|blog|clog)"
+        title="frog, blog, or clog only">
+
+        <h2>BONUS. เป็นรหัสนักศึกษา cs เท่านั้น</h2>
+        <input type="text" name="no5" placeholder="xx-xxxxxx-xxxx-x"
+        pattern="6[0-9]-040626-[0-9]{4}-[0-9]{1}"
+        title="cs student ID only">
+
+        <input type="submit">
+    </form>
+</body>
+</html>
