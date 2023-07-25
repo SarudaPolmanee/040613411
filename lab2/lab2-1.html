@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    .box{
+        padding: 1%;
+        border: 1px solid black;
+    }
+</style>
+
+</head>
+<body>
+    <form>
+        <p><label>ชื่อเต็ม/ยอของสาขาวิชา:
+        <input type="text" id="dept"></label></p>
+
+        <p><label>
+            จำนวนเงินที่จะโอน:
+            <input type="number" id="money">
+        </label><br></p>
+
+        <p><label>
+            อาหารที่ชื่นชอบ 5 ชนิดที่ชื่นชอบจากมากไปน้อย:<br>
+            <textarea id="money" rows="5" cols="30"></textarea>
+        </label><br></p>
+
+        <p><label>
+            ค่าไฟฟ้า 3 เดือนที่ผ่านมา:
+            <input type="number" id="money">
+        </label><br></p>
+
+        <p><label>
+            รหัสบัตรประชาชน:
+            <input type="text" id="idcard">
+        </label><br></p>
+
+        <label>อาการป่วย:<br>
+            <input type="checkbox" id="sick" value="ไอ">ไอ<br>
+            <input type="checkbox" id="sick" value="ตัวร้อน">ตัวร้อน<br>
+            <input type="checkbox" id="sick" value="ปวดหัว">ปวดหัว<br>
+        </label>
+
+        <label>ในช่วง 3 เดือนที่ผ่านมา เคยได้รับวัคซีนหรือไม่:<br>
+            <input type="radio" id="vacc" value="เคย">เคย<br>
+            <input type="radio" id="vacc" value="ไม่เคย">ไม่เคย<br>
+        </label>
+
+        <p><label>
+            รหัสผ่าน:
+            <input type="password" id="passwd">
+        </label><br></p>
+
+        <p><label>
+            เวลาเริ่มเข้าเรียนและสิ้นสุดการเรียน:
+            <input type="time" id="studytime">
+        </label><br></p>
+
+        <p><label>
+            วันเวลาที่ต้องไปพบแพทย์:
+            <input type="datetime-local" id="docdatetime">
+        </label><br></p>
+
+        <p><input type="submit" value="Submit"></p>
+    </form>
+
+</body>
+</html>
