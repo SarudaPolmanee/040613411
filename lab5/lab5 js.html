@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<hmtl>
+<head>
+<script>
+    let student = [{
+        fullname: 'นายตั้งใจ เรียนมาก',
+        age: 18,
+        year: 1,
+        gpa: 3.40,
+        help: true
+    },
+    {
+        fullname: 'นายส่งงาน ตลอดมา',
+        age: 19,
+        year: 2,
+        gpa: 3.00,
+        help: false
+    },
+    {
+        fullname: 'นางสาวใส่ใจ ดีงาม',
+        age: 20,
+        year: 3,
+        gpa: 2.90,
+        help: true
+    },
+    {
+        fullname: 'นายนิรันดร์ กมลพิศาล',
+        age: 21,
+        year: 3,
+        gpa: 3.80,
+        help: true
+    }];
+
+    function checkCon1(student){
+        if(student.gpa >= 3.2){
+            return true;
+        } else return false
+    }
+
+    function checkCon2(student){
+        if(student.year >= 2 && student.gpa >= 2.75 && student.help){
+            return true;
+        } else return false
+    }
+
+    function checkCon(student){
+        let con1,con2,bYear;
+        con1 = checkCon1(student)
+        con2 = checkCon2(student)
+        bYear = 2566 - student.age
+        if(con1 && con2){
+            console.log(student.fullname+" เกิดเมื่อปี "+ bYear +" ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย")
+        } else if (con2){
+            console.log(student.fullname+" เกิดเมื่อปี "+ bYear +" ได้รับทุนการศึกษา เนื่องจากช่วยงานภาควิชา")
+        } else if(con1){
+            console.log(student.fullname+" เกิดเมื่อปี "+ bYear +" ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์")
+        }  else {
+            console.log(student.fullname+" เกิดเมื่อปี "+ bYear +" ไม่ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์และยังไม่ช่วยงานภาควิชา")
+        }
+    }
+
+    function checkYear(student,year){
+        let con1,con2;
+        con1 = checkCon1(student)
+        con2 = checkCon2(student)
+        if(year !== student.year ){
+            return;
+        }
+        if(con1 && con2){
+            console.log(student.fullname +" ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์และยังช่วยงานภาควิชาด้วย")
+        } else if (con2){
+            console.log(student.fullname +" ได้รับทุนการศึกษา เนื่องจากช่วยงานภาควิชา")
+        } else if(con1){
+            console.log(student.fullname +" ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยถึงเกณฑ์")
+        }  else {
+            console.log(student.fullname +" ไม่ได้รับทุนการศึกษา เนื่องจากเกรดเฉลี่ยไม่ถึงเกณฑ์และยังไม่ช่วยงานภาควิชา")
+        }
+    }
+
+    function sumStudent(year){
+        let count = 0;
+        for (let index = 0; index < student.length; index++) {
+            if(year === student[index].year){
+                count++;
+            }
+        }
+        return count;
+    }
+
+    for(let i = 0; i < student.length; i++){
+        checkCon(student[i])
+    }
+    for(let i = 1; i < 5; i++){
+        let year = i;
+        let checkStudent = sumStudent(i);
+        
+        console.log("ชั้นปีที่ "+ i);
+        if ( checkStudent === 0 ){
+            console.log("ไม่มี");
+        }
+        else{
+            for(let j = 0; j < student.length; j++){
+                if(year === student[j].year){
+                    checkYear(student[j],year)
+                }
+            }
+        }
+    }
+</script>
+</head>
+<body>
+
+</body>
+</hmtl>

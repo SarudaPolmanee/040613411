@@ -1,0 +1,23 @@
+<html>
+<head>
+<script>
+function changeColorName() {
+    let name = document.getElementById("name");
+    name.style.color = "green";
+}
+function changeColorAge() {
+    let age = document.getElementById("age");
+    age.style.color = "green";
+}
+function changeColorBD() {
+    let birthDate = document.getElementById("birthDate");
+    birthDate.style.color = "green";
+}
+</script>
+</head>
+<body>
+Name: <input type="text" id="name" onfocusout="changeColorName()"><br>
+Age: <input type="text" id="age" onfocusout="changeColorAge()"><br>
+Birthdate: <input type="text" id="birthDate" onfocusout="changeColorBD()"><br>
+</body>
+</html>

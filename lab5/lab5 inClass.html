@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+    function add(){
+        let nameIn = document.getElementById("name");
+        let addressIn = document.getElementById("address");
+        let phoneIn = document.getElementById("phone");
+
+        let name = nameIn.value;
+        let address = addressIn.value;
+        let phone = phoneIn.value;
+
+        let tab = document.getElementById("tb");
+        let newRow = tab.insertRow()
+
+        let col1 = newRow.insertCell(0);
+        let col2 = newRow.insertCell(1);
+        let col3 = newRow.insertCell(2);
+
+        col1.innerText = name;
+        col2.innerText = address;
+        col3.innerText = phone;
+
+        /*let newCol = document.createElement("td");
+        let newRow = document.createElement("tr");
+
+         let newCol1 = document.createElement("td");
+        let newCol2 = document.createElement("td");
+        let newCol3 = document.createElement("td");
+
+        newCol1.innerHTML = name;
+        newCol2.innerHTML = address;
+        newCol3.innerHTML = phone;
+
+        let newRow = document.createElement("tr");
+        newRow.appendChild(newCol1);
+        newRow.appendChild(newCol2);
+        newRow.appendChild(newCol3);
+
+        let addRow = document.getElementById("tb");
+        addRow.appendChild(newRow);*/
+    }
+    window.onload = function() {
+        let addCustomer = document.getElementById("addCustomer");
+        addCustomer.onclick = add;
+    }
+</script>
+</head>
+<body>
+    ชื่อลูกค้า : <input type="text" id="name"><br>
+    ที่อยู่ : <input type="text" id="address"><br>
+    โทรศัพท์ : <input type="text" id="phone"><br>
+    <input type="button" id="addCustomer" value="เพิ่ม">
+
+    <table border="1" id="tb">
+        <th>ชื่อลูกค้า</th>
+        <th>ที่อยู่</th>
+        <th>โทรศัพท์</th>
+    </table>
+</body>
+</html>
