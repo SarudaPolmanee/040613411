@@ -8,7 +8,7 @@
 
     while($row = $stmt->fetch()):
 ?>
-    ชื่อสมาชิก: <?=$row["username"]?><br>
+    ชื่อสมาชิก: <?=$row["name"]?><br>
     ที่อยู่: <?=$row["address"]?><br>
     อีเมล์: <?=$row["email"]?><br>
     <?="<hr>"?>

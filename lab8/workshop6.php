@@ -3,7 +3,7 @@
 <head><meta charset="utf-8">
 <script>
 function confirmDelete(username) {
-    var ans = confirm("ต้องการลบผู้ใช้" + username);
+    var ans = confirm("ต้องการลบผู้ใช้ " + username);
     if (ans==true)
         document.location = "delete.php?username=" + username;
 }
@@ -17,13 +17,10 @@ function confirmDelete(username) {
     echo "ชื่อสมาชิก: ".$row["name"]."<br>";
     echo "ที่อยู่: ".$row["address"]."<br>";
     echo "อีเมล์: ".$row["email"]."<br>";
-    echo "<img src='../img/" . $row["username"] .".jpg' width='100'><br>";
-    echo "<a href='editform.php?username=" . $row ["username"] . "'>แก้ไข</a> | ";
-    echo "<a href='#' onclick='confirmDelete(" . $row ["username"] . ")'>ลบ</a>";
+    echo "<a href='workshop9.php?username=" . $row ["username"] . "'>แก้ไข</a> | ";
+    echo "<a href='#' onclick='confirmDelete(\"" . $row ["username"] . "\")'>ลบ</a>";
     echo "<hr>\n";
 }
 ?>
 </body>
 </html>
-
-    
